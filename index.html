@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARANG | STC Pollachi</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6ff;
+            color: #222;
+            transition: background-color 0.5s;
+        }
+
+        /* HEADER */
+        .baner {
+            background: linear-gradient(135deg, #151c50, #5148c9);
+            color: white;
+            min-height: 250px;
+            margin: 15px;
+            padding: 35px 15px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px #0002;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .baner h1:first-child {
+            font-size: clamp(24px, 4vw, 38px);
+        }
+
+        .baner h1:nth-child(2) {
+            font-size: clamp(35px, 7vw, 65px);
+            letter-spacing: 10px;
+            color: #ffe28a;
+            margin: 12px 0;
+            animation: appear 1.2s ease;
+        }
+
+        .baner p {
+            font-size: 17px;
+            margin-top: 8px;
+        }
+
+        /* EVENT CARDS */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
+            margin: 30px auto;
+            padding: 0 20px;
+            max-width: 1100px;
+        }
+
+        .details, .reg {
+            flex: 1;
+            min-width: 0;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #0002;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .details {
+            background: white;
+            border-top: 6px solid #5148c9;
+        }
+
+        .reg {
+            background: #fff0e8;
+            border-top: 6px solid #ff795b;
+        }
+
+        .details:hover, .reg:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px #0002;
+        }
+
+        .details h1, .reg h1 {
+            font-size: 25px;
+            margin-bottom: 22px;
+        }
+
+        .details h3 {
+            background: #eeedff;
+            color: #37308f;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .details h3:hover {
+            background: #d9d5ff;
+            transform: translateX(6px);
+        }
+
+        .reg p {
+            margin: 18px 0;
+            line-height: 1.6;
+        }
+
+        /* BUTTON */
+        .button {
+            background: #5148c9;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            animation: pulse 1.8s infinite;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background: #29216f;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #151c50;
+            color: white;
+            margin-top: 35px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* TABLET */
+        @media screen and (max-width: 800px) {
+            .container {
+                gap: 15px;
+            }
+
+            .details, .reg {
+                padding: 22px;
+            }
+
+            .details h1, .reg h1 {
+                font-size: 22px;
+            }
+        }
+
+        /* MOBILE */
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: #fff0f5;
+            }
+
+            .baner {
+                background: linear-gradient(135deg, #a21caf, #ec4899);
+                min-height: 210px;
+                margin: 10px;
+                padding: 25px 12px;
+                border-radius: 14px;
+            }
+
+            .baner h1:nth-child(2) {
+                letter-spacing: 5px;
+            }
+
+            .baner p {
+                font-size: 14px;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+                margin: 20px auto;
+                padding: 0 15px;
+                gap: 20px;
+            }
+
+            .details, .reg {
+                width: 100%;
+                padding: 22px;
+                border-radius: 14px;
+            }
+
+            .details {
+                background: #fff;
+                border-top-color: #c026d3;
+            }
+
+            .reg {
+                background: #fce7f3;
+                border-top-color: #ec4899;
+            }
+
+            .details h1, .reg h1 {
+                font-size: 21px;
+            }
+
+            .button {
+                width: 100%;
+                padding: 15px;
+            }
+
+            footer {
+                background: #831843;
+            }
+        }
+
+        /* SMALL MOBILE */
+        @media screen and (max-width: 350px) {
+            .baner h1:nth-child(2) {
+                letter-spacing: 2px;
+            }
+
+            .details, .reg {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="baner">
+        <h1>STC | POLLACHI</h1>
+        <h1>TARANG</h1>
+        <p>Inter College Event | 9 October 2027</p>
+        <p>✨ Celebrate Talent. Create Memories. ✨</p>
+    </header>
+
+    <main class="container">
+
+        <section class="details">
+            <h1>🎭 Event Details</h1>
+            <h3>🎤 Singing Competition</h3>
+            <h3>💃 Dancing Competition</h3>
+            <h3>🎨 More Fun Activities</h3>
+        </section>
+
+        <section class="reg">
+            <h1>📝 Registration Details</h1>
+            <p><strong>Registration Fee:</strong> ₹200</p>
+            <p><strong>Event Time:</strong> 10:00 AM</p>
+            <p><strong>Venue:</strong> STC, Pollachi</p>
+            <button class="button" type="button"
+                onclick="alert('Registration details will be announced soon!')">
+                Register Now →
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2027 TARANG | STC Pollachi</p>
+        <p>Where Talent Meets Celebration!</p>
+    </footer>
+
+</body>
+</html>
